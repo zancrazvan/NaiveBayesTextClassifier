@@ -9,7 +9,6 @@ import com.varm.textclassifier.naivebayesnetwork.model.NaiveBayesNetwork;
 import com.varm.textclassifier.naivebayesnetwork.service.NaiveBayesService;
 import com.varm.textclassifier.naivebayesnetwork.util.FileReader;
 
-
 public class Main {
 
 	public static void main(String args[]) throws IOException {

@@ -40,14 +40,14 @@ public class NaiveBayesService {
 		knowledgeBase.setNumberOffeatures(featureStats.getFeatureCategoryJointCount().size()); // number
 																								// of
 																								// features
-
+		System.out.println("Nr. of features: " + knowledgeBase.getNumberOffeatures());
 		// check is prior probabilities are given
 		if (categoryPriors == null) {
 			// if not estimate the priors from the sample
 			knowledgeBase.setNumberOfCategories(featureStats.getCategoryCounts().size()); // number
 																							// of
 																							// cateogries
-			System.out.println("In train nrOfCategories: " + knowledgeBase.getNumberOfCategories());
+			
 			knowledgeBase.setLogPriors(new HashMap<>());
 
 			String category = new String();
@@ -148,7 +148,7 @@ public class NaiveBayesService {
 		}
 		featureOccurrencesInCategory = null;
 
-		System.out.println(knowledgeBase.toString());
+	//	System.out.println(knowledgeBase.toString());
 		return knowledgeBase;
 	}
 

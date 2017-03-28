@@ -89,7 +89,7 @@ public class FeatureService {
 
 		// we pass this information to the feature selection algorithm and we
 		// get a list with the selected features
-		Map<String, Double> selectedFeatures = ChisquareService.chisquare(stats, 10.83);
+		Map<String, Double> selectedFeatures = ChisquareService.chisquare(stats, 6.63);
 
 		// clip from the stats all the features that are not selected
 		Iterator<Map.Entry<String, Map<String, Integer>>> it = stats.getFeatureCategoryJointCount().entrySet()
