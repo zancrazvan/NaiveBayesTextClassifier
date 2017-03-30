@@ -10,7 +10,7 @@ import com.varm.textclassifier.datasetprocessor.model.Document;
 
 public class FeatureService {
 
-	public static Feature extractFeatureStats(List<Document> dataset) {
+	private static Feature extractFeatureStats(List<Document> dataset) {
 		Feature stats = new Feature();
 
 		Integer categoryCount = new Integer(0);
@@ -48,6 +48,10 @@ public class FeatureService {
 
 				// get the counts of the feature in the categories
 				featureCategoryCounts = stats.getFeatureCategoryJointCount().get(feature);
+
+				// System.out.println(feature.toString() + " -> " +
+				// featureCategoryCounts);
+
 				if (featureCategoryCounts == null) {
 					// initialize it if it does not exist
 					Map<String, Map<String, Integer>> featureCategoryJointCountTemp = stats
@@ -69,7 +73,7 @@ public class FeatureService {
 			}
 		}
 
-		System.out.println("Stats: " + stats.getFeatureCategoryJointCount().size());
+		// System.out.println("Stats: " + stats.toString());
 
 		return stats;
 	}
@@ -87,9 +91,14 @@ public class FeatureService {
 		// extract the stats of the dataset
 		Feature stats = FeatureService.extractFeatureStats(dataset);
 
+		 System.out.println(stats.toString());
+		 
 		// we pass this information to the feature selection algorithm and we
 		// get a list with the selected features
 		Map<String, Double> selectedFeatures = ChisquareService.chisquare(stats, 6.63);
+
+		// System.out.println("Selected Features: " +
+		// selectedFeatures.toString());
 
 		// clip from the stats all the features that are not selected
 		Iterator<Map.Entry<String, Map<String, Integer>>> it = stats.getFeatureCategoryJointCount().entrySet()
