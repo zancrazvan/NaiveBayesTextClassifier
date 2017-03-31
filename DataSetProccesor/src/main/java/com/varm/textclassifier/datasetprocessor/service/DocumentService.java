@@ -29,7 +29,7 @@ public class DocumentService {
 			category = entry.getKey();
 			examples = entry.getValue();
 
-			for (int i = 0; i < examples.length; ++i) {
+			for (int i = 0; i < examples.length; i++) {
 				// for each example in the category tokenize its text and
 				// convert it into a Document object.
 				doc = TextTokenizer.tokenize(examples[i]);

@@ -28,8 +28,6 @@ public class NaiveBayesService {
 		// preprocess the given dataset
 		List<Document> dataset = DocumentService.preprocessDataset(trainingDataset);
 
-	//	System.out.println("Dataset: " + dataset.toString());
-
 		// produce the feature stats and select the best features
 		Feature featureStats = FeatureService.selectFeatures(dataset);
 

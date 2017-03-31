@@ -25,6 +25,7 @@ public class ChisquareService {
 		int N1dot, N0dot, N00, N01, N10, N11;
 		double chisquareScore = 0.0;
 		Double previousScore = new Double(0);
+		
 		for (Map.Entry<String, Map<String, Integer>> entry1 : stats.getFeatureCategoryJointCount().entrySet()) {
 			feature = entry1.getKey();
 			categoryList = entry1.getValue();

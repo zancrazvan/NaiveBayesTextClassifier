@@ -57,11 +57,13 @@ public class TextTokenizer {
 	 * 
 	 */
 	public static Document tokenize(String text) {
+
 		String preprocessedText = TextTokenizer.preprocess(text);
 		String[] keywordArray = TextTokenizer.extractKeywords(preprocessedText);
 
 		Document doc = new Document();
 		doc.setTokens(TextTokenizer.getKeywordCounts(keywordArray));
+
 		return doc;
 	}
 

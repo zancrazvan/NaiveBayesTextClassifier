@@ -91,14 +91,13 @@ public class FeatureService {
 		// extract the stats of the dataset
 		Feature stats = FeatureService.extractFeatureStats(dataset);
 
-		 System.out.println(stats.toString());
-		 
+		System.out.println(stats.toString());
+
 		// we pass this information to the feature selection algorithm and we
 		// get a list with the selected features
 		Map<String, Double> selectedFeatures = ChisquareService.chisquare(stats, 6.63);
 
-		// System.out.println("Selected Features: " +
-		// selectedFeatures.toString());
+		System.out.println("Selected Features: " + selectedFeatures.toString());
 
 		// clip from the stats all the features that are not selected
 		Iterator<Map.Entry<String, Map<String, Integer>>> it = stats.getFeatureCategoryJointCount().entrySet()
